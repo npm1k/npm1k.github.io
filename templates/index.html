@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang=en>
+  <head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content=IE=edge>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>npm1K</title>
+    <link rel=stylesheet
+          href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css>
+  </head>
+  <body>
+    <div class=container>
+      <div class=page-header>
+        <h1>npm1K</h1>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar progress-bar-success"
+             style="width: {{valid}}%">
+          {{validRounded}}% valid
+        </div>
+        <div class="progress-bar progress-bar-warning"
+             style="width: {{invalid}}%">
+          {{invalidRounded}}% invalid
+        </div>
+        <div class="progress-bar progress-bar-danger"
+             style="width: {{missing}}%">
+          {{missingRounded}}% missing
+        </div>
+      </div>
+
+      <h2>Most Wanted</h2>
+
+      <table class=table>
+        <thead>
+          <tr>
+            <th>Package</th>
+            <th>package.json license property</th>
+            <th>SPDX</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#mostWanted}}
+          <tr class={{displayClass}}>
+            <td><a href='{{homepage}}'>{{package}}</a></td>
+            <td>{{license}}</td>
+            {{#valid}}
+            <td>✔</td>
+            {{/valid}}
+            {{#invalid}}
+            <td>✘</td>
+            {{/invalid}}
+            {{#missing}}
+            <td>✘</td>
+            {{/missing}}
+          </tr>
+          {{/mostWanted}}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
