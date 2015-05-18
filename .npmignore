@@ -3,5 +3,3 @@
 .jscsrc
 .jshintrc
 .npmignore
-.travis.yml
-test
