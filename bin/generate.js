@@ -83,6 +83,7 @@ async.concatSeries(
     } else {
       packages = packages.slice(0, 1000);
       var context = {
+        date: new Date().toUTCString(),
         valid: packages.reduce(function(count, element) {
           return count + (element.valid ? 1 : 0);
         }, 0) / packages.length * 100,
