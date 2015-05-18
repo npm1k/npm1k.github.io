@@ -36,7 +36,6 @@
           <tr>
             <th>Package</th>
             <th>package.json license property</th>
-            <th>SPDX</th>
           </tr>
         </thead>
 
@@ -45,15 +44,6 @@
           <tr class={{displayClass}}>
             <td><a href='{{homepage}}'>{{package}}</a></td>
             <td>{{license}}</td>
-            {{#valid}}
-            <td>✔</td>
-            {{/valid}}
-            {{#invalid}}
-            <td>✘</td>
-            {{/invalid}}
-            {{#missing}}
-            <td>✘</td>
-            {{/missing}}
           </tr>
           {{/mostWanted}}
         </tbody>
