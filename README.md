@@ -1,4 +1,4 @@
 npm1k.org
 =========
 
-Are we licensed yet?.
+Are we licensed yet?
