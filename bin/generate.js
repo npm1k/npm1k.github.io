@@ -5,6 +5,7 @@ var https = require('https');
 var mustache = require('mustache'); // templating
 var normalize = require('normalize-package-data');
 var packageJSON = require('package-json');
+var parseGitHub = require('github-url-to-object');
 var path = require('path');
 var spdx = require('spdx'); // license string validation
 
@@ -50,6 +51,23 @@ async.concatSeries(
                     spdx.valid(json.license) === true
                   );
                   var invalid = !valid && !missing;
+                  var fixItURL = false;
+                  if ((invalid || missing) && json.repository) {
+                    var repoURL = json.repository.url;
+                    if (repoURL && repoURL.indexOf('github.com') > -1) {
+                      var parsed = parseGitHub(repoURL);
+                      if (parsed) {
+                        fixItURL = (
+                          'https://github.com' +
+                          '/' + parsed.user +
+                          '/' + parsed.repo +
+                          '/edit' +
+                          '/master' +
+                          '/package.json'
+                        );
+                      }
+                    }
+                  }
                   callback(null, {
                     number: packageNumber,
                     package: name,
@@ -69,6 +87,7 @@ async.concatSeries(
                       invalid ? 'warning' :
                       'danger'
                     ),
+                    fixItURL: fixItURL,
                     dependencies: json.dependencies,
                     devDependencies: json.devDependencies
                   });
