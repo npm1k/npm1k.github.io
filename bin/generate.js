@@ -13,6 +13,7 @@ for (var i = 0; i < 1000; i += 36) {
   offsets.push(i);
 }
 
+var number = 0;
 async.concatSeries(
   offsets,
   function(offset, callback) {
@@ -36,6 +37,7 @@ async.concatSeries(
           async.map(
             packageNames,
             function(name, callback) {
+              var packageNumber = ++number;
               packageJSON(name, 'latest', function(error, json) {
                 normalize(json);
                 if (error) {
@@ -49,6 +51,7 @@ async.concatSeries(
                   );
                   var invalid = !valid && !missing;
                   callback(null, {
+                    number: packageNumber,
                     package: name,
                     homepage: encodeURI(json.homepage),
                     license: (

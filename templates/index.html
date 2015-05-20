@@ -36,6 +36,7 @@
       <table class=table>
         <thead>
           <tr>
+            <th>№</th>
             <th>Package</th>
             <th>package.json license property</th>
           </tr>
@@ -44,6 +45,7 @@
         <tbody>
           {{#mostWanted}}
           <tr class={{displayClass}}>
+            <td>{{number}}</td>
             <td><a href='{{homepage}}'>{{package}}</a></td>
             <td>{{license}}</td>
           </tr>
