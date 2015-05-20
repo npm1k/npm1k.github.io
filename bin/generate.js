@@ -103,7 +103,12 @@ async.concatSeries(
     if (error) {
       throw error;
     } else {
-      packages = packages.slice(0, 1000);
+      packages = packages
+        .slice(0, 1000);
+      var mostWanted = packages
+        .filter(function(package) {
+          return !package.valid;
+        });
       var context = {
         date: new Date().toUTCString(),
         valid: packages.reduce(function(count, element) {
@@ -115,7 +120,7 @@ async.concatSeries(
         missing: packages.reduce(function(count, element) {
           return count + (element.missing ? 1 : 0);
         }, 0) / packages.length * 100,
-        mostWanted: packages
+        mostWanted: mostWanted
       };
       ['valid', 'invalid', 'missing'].forEach(function(count) {
         context[count + 'Rounded'] = Math.round(context[count]);
