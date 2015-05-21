@@ -52,46 +52,42 @@ function isValid(json) {
 }
 
 function addRepoFixes(repository, result, callback) {
-  setTimeout(function() {
-    githubPackageJSON.master(
-      repository.url,
-      function(err, repositoryJSON) {
-        if (!err && isValid(repositoryJSON)) {
-          result.fixedInRepo = true;
+  githubPackageJSON.master(
+    repository.url,
+    function(err, repositoryJSON) {
+      if (!err && isValid(repositoryJSON)) {
+        result.fixedInRepo = true;
 
-          return callback(null, result);
-        }
-
-        setTimeout(function() {
-          githubPackageJSON.pullRequests(
-            repository.url,
-            function(err, packageJSONs) {
-              if (!err) {
-                var validPRs = packageJSONs
-                  .filter(function(pullRequest) {
-                    return isValid(pullRequest.json);
-                  });
-
-                if (validPRs.length > 0) {
-                  result.fixedInPRs = validPRs
-                    .map(function(pullRequest) {
-                      delete pullRequest.json;
-                      return pullRequest;
-                    });
-
-                  return callback(null, result);
-                }
-              }
-
-              result.fixItURL = getFixItURL(repository);
-
-              callback(null, result);
-            }
-          );
-        }, 750);
+        return callback(null, result);
       }
-    );
-  }, 750);
+
+      githubPackageJSON.pullRequests(
+        repository.url,
+        function(err, packageJSONs) {
+          if (!err) {
+            var validPRs = packageJSONs
+              .filter(function(pullRequest) {
+                return isValid(pullRequest.json);
+              });
+
+            if (validPRs.length > 0) {
+              result.fixedInPRs = validPRs
+                .map(function(pullRequest) {
+                  delete pullRequest.json;
+                  return pullRequest;
+                });
+
+              return callback(null, result);
+            }
+          }
+
+          result.fixItURL = getFixItURL(repository);
+
+          callback(null, result);
+        }
+      );
+    }
+  );
 }
 
 function processPackages(packages, callback) {
