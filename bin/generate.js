@@ -8,6 +8,7 @@ var packageJSON = require('package-json');
 var parseGitHub = require('github-url-to-object');
 var path = require('path');
 var spdx = require('spdx'); // license string validation
+var githubPackageJSON = require('github-package-json');
 
 var offsets = [];
 for (var i = 0; i < 1000; i += 36) {
@@ -15,88 +16,147 @@ for (var i = 0; i < 1000; i += 36) {
 }
 
 var number = 0;
+
+function packageNames(html) {
+  var $ = cheerio.load(html);
+  return $('a.name')
+    .map(function() {
+      return cheerio(this).text();
+    })
+    .get();
+}
+
+function getFixItURL(repository) {
+  var repoURL = repository.url;
+  if (repoURL && repoURL.indexOf('github.com') > -1) {
+    // github-url-to-object fails with git+<protocol>:// URLs
+    var parsed = parseGitHub(repoURL.replace(/^git\+/, ''));
+    if (parsed) {
+      // TODO: use the default branch since master doesn't always
+      // exist
+      return (
+        'https://github.com' +
+        '/' + parsed.user +
+        '/' + parsed.repo +
+        '/edit' +
+        '/master' +
+        '/package.json'
+      );
+    }
+  }
+}
+
+function isValid(json) {
+  return typeof json.license === 'string' &&
+    spdx.valid(json.license) === true;
+}
+
+function addRepoFixes(repository, result, callback) {
+  githubPackageJSON.master(
+    repository.url,
+    function(err, repositoryJSON) {
+      if (!err && isValid(repositoryJSON)) {
+        result.fixedInRepo = true;
+
+        return callback(null, result);
+      }
+
+      githubPackageJSON.pullRequests(
+        repository.url,
+        function(err, packageJSONs) {
+          if (!err) {
+            var validPRs = packageJSONs.filter(function(pullRequest) {
+              return isValid(pullRequest.json);
+            });
+
+            if (validPRs.length > 0) {
+              result.fixedInPRs = validPRs.map(function(pullRequest) {
+                delete pullRequest.json;
+                return pullRequest;
+              });
+
+              return callback(null, result);
+            }
+          }
+
+          result.fixItURL = getFixItURL(repository);
+
+          callback(null, result);
+        }
+      );
+    }
+  );
+}
+
+function processPackages(packages, callback) {
+  async.map(
+    packages,
+    function(name, cbMap) {
+      var packageNumber = ++number;
+      packageJSON(name, 'latest', function(error, json) {
+        normalize(json);
+        if (error) {
+          cbMap(error);
+        } else {
+          var missing = !json.license;
+          var valid = (
+            !missing && isValid(json)
+          );
+          var invalid = !valid && !missing;
+          var result = {
+            number: packageNumber,
+            package: name,
+            homepage: encodeURI(json.homepage),
+            license: (
+              json.license ?
+                JSON.stringify(json.license) :
+                json.hasOwnProperty('licenses') ?
+                  'Using deprecated "licenses"' :
+                  'None'
+            ),
+            valid: valid,
+            invalid: invalid,
+            missing: missing,
+            displayClass: (
+              valid ? 'success' :
+              invalid ? 'warning' :
+              'danger'
+            ),
+            dependencies: json.dependencies,
+            devDependencies: json.devDependencies
+          };
+          if ((invalid || missing) && json.repository) {
+            return addRepoFixes(json.repository, result, cbMap);
+          }
+          cbMap(null, result);
+        }
+      });
+    },
+    callback
+  );
+}
+
+function getMostDependedPage(offset, callback) {
+  https.get({
+    hostname: 'www.npmjs.com',
+    path: '/browse/depended?offset=' + offset
+  }, function(response) {
+    var buffer = '';
+    response
+      .on('data', function(data) {
+        buffer += data.toString();
+      })
+      .on('end', function() {
+        callback(buffer);
+      });
+  });
+}
+
 async.concatSeries(
   offsets,
   function(offset, callback) {
-    https.get({
-      hostname: 'www.npmjs.com',
-      path: '/browse/depended?offset=' + offset
-    }, function(response) {
-      var buffer = '';
-      response
-        .on('data', function(data) {
-          buffer += data.toString();
-        })
-        .on('end', function() {
-          var $ = cheerio.load(buffer);
-          buffer = null;
-          var packageNames = $('a.name')
-            .map(function() {
-              return cheerio(this).text();
-            })
-            .get();
-          async.map(
-            packageNames,
-            function(name, callback) {
-              var packageNumber = ++number;
-              packageJSON(name, 'latest', function(error, json) {
-                normalize(json);
-                if (error) {
-                  callback(error);
-                } else {
-                  var missing = !json.license;
-                  var valid = (
-                    !missing &&
-                    typeof json.license === 'string' &&
-                    spdx.valid(json.license) === true
-                  );
-                  var invalid = !valid && !missing;
-                  var fixItURL = false;
-                  if ((invalid || missing) && json.repository) {
-                    var repoURL = json.repository.url;
-                    if (repoURL && repoURL.indexOf('github.com') > -1) {
-                      var parsed = parseGitHub(repoURL);
-                      if (parsed) {
-                        fixItURL = (
-                          'https://github.com' +
-                          '/' + parsed.user +
-                          '/' + parsed.repo +
-                          '/edit' +
-                          '/master' +
-                          '/package.json'
-                        );
-                      }
-                    }
-                  }
-                  callback(null, {
-                    number: packageNumber,
-                    package: name,
-                    homepage: encodeURI(json.homepage),
-                    license: (
-                      json.license ?
-                        JSON.stringify(json.license) :
-                        json.hasOwnProperty('licenses') ?
-                          'Using deprecated "licenses"' :
-                          'None'
-                    ),
-                    valid: valid,
-                    invalid: invalid,
-                    missing: missing,
-                    displayClass: (
-                      valid ? 'success' :
-                      invalid ? 'warning' :
-                      'danger'
-                    ),
-                    fixItURL: fixItURL,
-                    dependencies: json.dependencies,
-                    devDependencies: json.devDependencies
-                  });
-                }
-              });
-            },
-            callback
-          );
-        });
+    getMostDependedPage(offset, function(html) {
+      processPackages(packageNames(html), callback);
     });
   },
   function(error, packages) {
