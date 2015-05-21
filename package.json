@@ -14,7 +14,7 @@
     "async": "^0.9.0",
     "cheerio": "^0.19.0",
     "github-package-json": "^2.1.0",
-    "github-url-to-object": "^1.5.2",
+    "parse-github-url": "^0.1.0",
     "jscs": "^1.13.1",
     "jshint": "^2.7.0",
     "mustache": "^2.0.0",
