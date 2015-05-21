@@ -20,7 +20,7 @@ var analysis = function(package, callback) {
       });
     },
     function(error, results) {
-      callback(null,  {
+      callback(null, {
         name: package.name,
         version: package.version,
         dependencies: results
