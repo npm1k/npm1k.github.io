@@ -14,7 +14,17 @@
         <h1>npm1K <small>are we licensed yet?</small></h1>
       </div>
 
-      <p class=lead>As of Thu, 21 May 2015 22:39:59 GMT</p>
+      <p><a href="http://npmjs.com">npm, the awesome source code package manager for JavaScript and stuff</a>, recently <a href="https://github.com/npm/npm/releases/tag/v2.10.0">updated its guidelines on license metadata in <code>package.json</code> files</a>. The new guidelines ask that package maintainers use <a href="http://spdx.org">the SPDX standard’s</a> license expression syntax to indicate how their work is licensed in a machine-readable way. You will get a warning if you don’t.</p>
+
+      <p>In most cases, following the new guidelines is as simple as making sure the <code>license</code> property (<em>not</em> <code>licenses</code>, as for RubyGems) is a string containing one of the license identifiers on <a href="http://spdx.org/licenses">SPDX' official list</a>. That means <code>Apache-2.0</code> instead of <code>Apache License, version 2</code>, <code>GPL-3.0</code> instead of <code>GPLv3</code>, and <code>BSD-2-Clause</code> or <code>BSD-3-Clause</code>, &amp;c., instead of ambiguous <code>BSD</code>. Fortunately, many of the most popular options are the most straightforward: <code>MIT</code> and <code>ISC</code> are both fine. You can even <code>Unlicense</code> or <code>WTFPL</code>, you rebel, you.</p>
+
+      <p>Who cares? Nobody cares! … until they have to do a license check. Then, thanks to how amazing npm is, you’re left staring down a nigh on bottomless well of <code>node_modules</code> directories to trawl, manually, for <code>LICENSE</code> files and hints in <code>README</code>. All the reckless joy of <code>npm install --save-dev</code> comes back to haunt you. But shouldn’t some lousy program do that work for you? Of course it should! But those programs need good, clean data to chew on. There are tons of licenses, and there is no way everybody is going to decide how to format them … or ever where to put them in a package. Predictable metadata is the answer.</p>
+
+      <p>The following is a list of packages among the 1,000 most-depended-upon (the “npm1K”) that aren't yet part of that better world. There are handy links for making quick pull requests to fix <code>package.json</code> if you’d like to help them out. Given how vital these packages are, each one that properly codes its licensing makes it that much easier to get npm and JavaScript adopted in new places, many of which are dipping timid corporate toes into open-source for the very first time.</p>
+
+      <p>Digging the sweet GitHub integration? Thank <a href="https://github.com/beaugunderson">@beaugunderson</a>. Want to rage-tweet about the new npm validation warning? Blame it on <a href="https://github.com/kemitchell">@kemitchell</a>. Want to trash npm for this corny single-page website? Can’t. It’s not affiliated with npm.</p>
+
+      <hr>
 
       <div class="progress">
         <div class="progress-bar progress-bar-success"
@@ -31,7 +41,7 @@
         </div>
       </div>
 
-      <h2>Most Wanted</h2>
+      <p><small>As of Thu, 21 May 2015 22:10:18 GMT</small></p>
 
       <table class=table>
         <thead>
