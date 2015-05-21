@@ -112,6 +112,7 @@ function processPackages(packages, callback) {
           var result = {
             number: packageNumber,
             package: name,
+            version: json.version,
             homepage: encodeURI(json.homepage),
             license: (
               json.license ?
