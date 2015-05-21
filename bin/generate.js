@@ -10,6 +10,8 @@ var path = require('path');
 var spdx = require('spdx'); // license string validation
 var githubPackageJSON = require('github-package-json');
 
+var API_DELAY = process.env.API_DELAY || 750;
+
 var offsets = [];
 for (var i = 0; i < 1000; i += 36) {
   offsets.push(i);
@@ -88,10 +90,10 @@ function addRepoFixes(repository, result, callback) {
               callback(null, result);
             }
           );
-        }, 750);
+        }, API_DELAY);
       }
     );
-  }, 750);
+  }, API_DELAY);
 }
 
 function processPackages(packages, callback) {
