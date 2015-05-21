@@ -37,8 +37,9 @@
         <thead>
           <tr>
             <th>№</th>
-            <th>Fix It!</th>
             <th>Package</th>
+            <th>Fix It!</th>
+            <th>Notes</th>
             <th>package.json license property</th>
           </tr>
         </thead>
@@ -47,6 +48,7 @@
           {{#mostWanted}}
           <tr>
             <td>{{number}}</td>
+            <td><a href='{{homepage}}'>{{package}}</a></td>
             <td>
               {{#fixItURL}}
                 <a href='{{fixItURL}}'>
@@ -54,7 +56,19 @@
                 </a>
               {{/fixItURL}}
             </td>
-            <td><a href='{{homepage}}'>{{package}}</a></td>
+            <td>
+              {{#fixedInRepo}}
+                fixed but not published
+              {{/fixedInRepo}}
+
+              {{#fixedInPRs.length}}
+                fixed in
+
+                {{#fixedInPRs}}
+                  <a href="{{url}}">#{{number}}</a>
+                {{/fixedInPRs}}
+              {{/fixedInPRs.length}}
+            </td>
             <td>{{license}}</td>
           </tr>
           {{/mostWanted}}
