@@ -32,7 +32,7 @@ function getFixItURL(repository) {
   var repoURL = repository.url;
   if (repoURL && repoURL.indexOf('github.com') > -1) {
     // github-url-to-object fails with git+<protocol>:// URLs
-    var parsed = parseGitHub(repoURL.replace(/^git\+/, ''));
+    var parsed = parseGitHub(repoURL);
     if (parsed) {
       // TODO: use the default branch since master doesn't always
       // exist
