@@ -111,6 +111,7 @@ function processPackages(packages, callback) {
             !missing && isValid(json)
           );
           var invalid = !valid && !missing;
+          var hasLicenses = json.licenses;
           var result = {
             number: packageNumber,
             package: name,
@@ -119,18 +120,13 @@ function processPackages(packages, callback) {
             license: (
               json.license ?
                 JSON.stringify(json.license) :
-                json.hasOwnProperty('licenses') ?
+                hasLicenses ?
                   'Using deprecated "licenses"' :
                   'None'
             ),
             valid: valid,
             invalid: invalid,
             missing: missing,
-            displayClass: (
-              valid ? 'success' :
-              invalid ? 'warning' :
-              'danger'
-            ),
             dependencies: json.dependencies,
             devDependencies: json.devDependencies
           };

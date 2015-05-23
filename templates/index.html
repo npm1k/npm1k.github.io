@@ -57,7 +57,12 @@
 
         <tbody>
           {{#mostWanted}}
+          {{#fixItURL}}
+          <tr class='{{displayClass}}'>
+          {{/fixItURL}}
+          {{^fixItURL}}
           <tr>
+          {{/fixItURL}}
             <td>{{number}}</td>
             <td><a href='{{homepage}}'>{{package}}</a></td>
             <td>{{version}}</td>
