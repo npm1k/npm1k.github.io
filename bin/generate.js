@@ -116,6 +116,7 @@ function processPackages(packages, callback) {
             number: packageNumber,
             package: name,
             version: json.version,
+            maintainers: json.maintainers,
             homepage: encodeURI(json.homepage),
             license: (
               json.license ?

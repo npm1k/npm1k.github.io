@@ -49,6 +49,7 @@
             <th>№</th>
             <th>Package</th>
             <th>Latest</th>
+            <th>Maintainers</th>
             <th>Fix It!</th>
             <th>Notes</th>
             <th>package.json license property</th>
@@ -66,6 +67,11 @@
             <td>{{number}}</td>
             <td><a href='{{homepage}}'>{{package}}</a></td>
             <td>{{version}}</td>
+            <td>
+              {{#maintainers}}
+                {{name}}
+              {{/maintainers}}
+            </td>
             <td>
               {{#fixItURL}}
                 <a href='{{fixItURL}}'>
