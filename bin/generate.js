@@ -49,7 +49,8 @@ function getFixItURL(repository) {
 }
 
 function isValid(json) {
-  return typeof json.license === 'string' &&
+  return json.license &&
+    typeof json.license === 'string' &&
     spdx.valid(json.license) === true;
 }
 
