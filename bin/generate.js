@@ -59,7 +59,7 @@ function addRepoFixes(repository, result, callback) {
     githubPackageJSON.master(
       repository.url,
       function(err, repositoryJSON) {
-        if (!err && isValid(repositoryJSON)) {
+        if (!err && repositoryJSON && isValid(repositoryJSON)) {
           result.fixedInRepo = true;
 
           return callback(null, result);
