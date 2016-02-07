@@ -22,7 +22,9 @@
 
       <p>The following is a list of packages among the 1,000 most-depended-upon (the “npm1K”) that aren't yet part of that better world. There are handy links for making quick pull requests to fix <code>package.json</code> if you’d like to help them out. Given how vital these packages are, each one with a good <code>license</code> property helps make Node easier to adopt in new and different teams, many of which are dipping timid corporate toes into open-source for the very first time.</p>
 
-      <p>Digging the sweet GitHub integration? Thank <a href="https://github.com/beaugunderson">@beaugunderson</a> and <a href="https://github.com/tunnckoCore">@tunnckoCore</a>. Want to rage-tweet about the new npm validation warning? Blame it on <a href="https://github.com/kemitchell">@kemitchell</a>. Want to trash npm for this corny single-page website? Can’t. It’s not affiliated with npm.</p>
+      <p>Want to rage-tweet about the new npm validation warning? Blame it on <a href="https://github.com/kemitchell">@kemitchell</a>. Want to trash npm for this corny single-page website? Can’t. It’s not affiliated with npm.</p>
+
+      <p>Special thanks to <a href="https://github.com/beaugunderson">@beaugunderson</a> and <a href="https://github.com/tunnckoCore">@tunnckoCore</a>.</p>
 
       <hr>
 
@@ -34,10 +36,6 @@
         <div class="progress-bar progress-bar-warning"
              style="width: {{invalid}}%">
           {{invalidRounded}}% invalid
-        </div>
-        <div class="progress-bar progress-bar-danger"
-             style="width: {{missing}}%">
-          {{missingRounded}}% missing
         </div>
       </div>
 
@@ -51,19 +49,13 @@
             <th>Latest</th>
             <th>Maintainers</th>
             <th>Fix It!</th>
-            <th>Notes</th>
-            <th>package.json license property</th>
+            <th>Warnings</th>
           </tr>
         </thead>
 
         <tbody>
           {{#mostWanted}}
-          {{#fixItURL}}
-          <tr class=danger>
-          {{/fixItURL}}
-          {{^fixItURL}}
           <tr>
-          {{/fixItURL}}
             <td>{{number}}</td>
             <td><a href='{{homepage}}'>{{package}}</a></td>
             <td>{{version}}</td>
@@ -80,19 +72,15 @@
               {{/fixItURL}}
             </td>
             <td>
-              {{#fixedInRepo}}
-                fixed but not published
-              {{/fixedInRepo}}
-
-              {{#fixedInPRs.length}}
-                fixed by pull requests:
-
-                {{#fixedInPRs}}
-                  <a href="{{url}}">#{{number}}</a>
-                {{/fixedInPRs}}
-              {{/fixedInPRs.length}}
+              <code>{{license}}</code>
+              <ul>
+              {{#licenseData}}
+                {{#warnings}}
+                  <li>{{.}}</li>
+                {{/warnings}}
+              {{/licenseData}}
+              </ul>
             </td>
-            <td>{{license}}</td>
           </tr>
           {{/mostWanted}}
         </tbody>

@@ -2,36 +2,25 @@
   "name": "npm1k.org",
   "description": "Are we licensed yet?",
   "version": "0.0.0",
-  "author": {
-    "name": "Kyle E. Mitchell",
-    "email": "kyle@kemitchell.com",
-    "url": "http://kemitchell.com"
-  },
-  "bugs": {
-    "url": "https://github.com/npm1k/npm1k.github.io/issues"
-  },
+  "author": "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com)",
   "devDependencies": {
     "async": "^0.9.0",
-    "cheerio": "^0.19.0",
-    "github-package-json": "^2.1.0",
-    "parse-github-url": "^0.1.0",
-    "jscs": "^1.13.1",
-    "jshint": "^2.7.0",
     "mustache": "^2.0.0",
     "normalize-package-data": "^2.1.0",
+    "npm1k": "^1.0.1",
     "package-json": "^1.1.0",
-    "spdx": "^0.4.0"
+    "parse-github-url": "^0.1.0",
+    "spdx": "^0.4.0",
+    "spdx-expression-validate": "^1.0.1",
+    "standard": "^6.0.1",
+    "validate-npm-package-license": "^3.0.1"
   },
   "homepage": "http://npm1k.org",
   "license": "Apache-2.0",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/npm1k/npm1k.github.io.git"
-  },
   "scripts": {
     "generate": "node bin/generate.js > index.html",
-    "lint": "jshint bin && jscs bin",
+    "lint": "standard bin/generate.js",
     "precommit": "npm run lint"
   }
 }
