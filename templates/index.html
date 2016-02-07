@@ -72,7 +72,9 @@
               {{/fixItURL}}
             </td>
             <td>
-              <code>{{license}}</code>
+              {{#license}}
+              <code>{{.}}</code>
+              {{/license}}
               <ul>
               {{#licenseData}}
                 {{#warnings}}
