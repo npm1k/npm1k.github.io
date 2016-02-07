@@ -10,8 +10,6 @@
     "npm1k": "^1.0.1",
     "package-json": "^1.1.0",
     "parse-github-url": "^0.1.0",
-    "spdx": "^0.4.0",
-    "spdx-expression-validate": "^1.0.1",
     "standard": "^6.0.1",
     "validate-npm-package-license": "^3.0.1"
   },
