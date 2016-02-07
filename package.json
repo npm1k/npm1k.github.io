@@ -18,7 +18,6 @@
   "private": true,
   "scripts": {
     "generate": "node bin/generate.js > index.html",
-    "lint": "standard bin/generate.js",
-    "precommit": "npm run lint"
+    "test": "standard bin/generate.js"
   }
 }
