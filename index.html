@@ -1,0 +1,2663 @@
+<!doctype html>
+<html lang=en>
+  <head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content=IE=edge>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="npm1K.org">
+    <meta name="twitter:description" content="Are we licensed yet? Dashboard of popular npm packages without license metadata.">
+    <meta name="twitter:image" content="https://npm1k.org/wanted.png">
+    <title>npm1K</title>
+    <link rel=stylesheet
+          href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css>
+  </head>
+  <body>
+    <div class=container>
+      <div class=page-header>
+        <h1>npm1K <small>are we licensed yet?</small></h1>
+      </div>
+
+      <p><a href="http://npmjs.com">npm, the awesome source code package manager for JavaScript and stuff</a>, recently <a href="https://github.com/npm/npm/releases/tag/v2.10.0">updated its guidelines on license metadata in <code>package.json</code> files</a>. The new guidelines ask maintainers to use <a href="http://spdx.org">the SPDX standard’s</a> license expression syntax to show how their work is licensed in a machine-readable way. You will get a warning if you don’t.</p>
+
+      <p>In most cases, that's as easy as setting your <code>license</code> property (<em>not</em> <code>licenses</code>, as for RubyGems) to <code>MIT</code>, <code>ISC</code>, <code>BSD-2-Clause</code>, <code>Apache-2.0</code>, or some other string on <a href="http://spdx.org/licenses">SPDX' official list</a>. You can even <code>Unlicense</code> or <code>WTFPL</code>, you rebel, you.</p>
+
+      <p>Who cares? Nobody cares! Until they have to do a license check. Then, thanks to how amazing npm is, you’re left staring down a bottomless well of <code>node_modules</code> directories you must search, manually, for <code>LICENSE</code> files and hints in <code>README</code>.  But shouldn’t some lousy program do that kind of work for you? Of course! And it would sure help if the npm ecosystem offered good, clean metadata to chew on.</p>
+
+      <p>The following is a list of packages among the 1,000 most-depended-upon (the “npm1K”) that aren't yet part of that better world. There are handy links for making quick pull requests to fix <code>package.json</code> if you’d like to help them out. Given how vital these packages are, each one with a good <code>license</code> property helps make Node easier to adopt in new and different teams, many of which are dipping timid corporate toes into open-source for the very first time.</p>
+
+      <p>Want to rage-tweet about the new npm validation warning? Blame it on <a href="https://github.com/kemitchell">@kemitchell</a>. Want to trash npm for this corny single-page website? Can’t. It’s not affiliated with npm.</p>
+
+      <p>Special thanks to <a href="https://github.com/beaugunderson">@beaugunderson</a> and <a href="https://github.com/tunnckoCore">@tunnckoCore</a>.</p>
+
+      <hr>
+
+      <div class="progress">
+        <div class="progress-bar progress-bar-success"
+             style="width: 86%">
+          86% valid
+        </div>
+        <div class="progress-bar progress-bar-danger"
+             style="width: 14%">
+          14% invalid
+        </div>
+      </div>
+
+      <p><small>Thu, 14 Apr 2016 04:00:54 GMT</small></p>
+
+      <table class=table>
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Package</th>
+            <th>Latest</th>
+            <th>Maintainers</th>
+            <th>Fix It!</th>
+            <th>Warnings</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>11</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;kriskowal&#x2F;q'>q</a></td>
+            <td>1.4.1</td>
+            <td>
+                kriskowal
+                domenic
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;kriskowal&#x2F;q&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>{&quot;type&quot;:&quot;MIT&quot;,&quot;url&quot;:&quot;http:&#x2F;&#x2F;github.com&#x2F;kriskowal&#x2F;q&#x2F;raw&#x2F;master&#x2F;LICENSE&quot;}</code>
+              <ul>
+                  <li>Invalid license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;substack&#x2F;node-optimist'>optimist</a></td>
+            <td>0.6.1</td>
+            <td>
+                substack
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;substack&#x2F;node-optimist&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;MIT&#x2F;X11&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+                  <li>license is similar to the valid expression &quot;MIT&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>26</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;broofa&#x2F;node-uuid'>node-uuid</a></td>
+            <td>1.4.7</td>
+            <td>
+                broofa
+                coolaj86
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;broofa&#x2F;node-uuid&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>47</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;broofa&#x2F;node-mime'>mime</a></td>
+            <td>1.3.4</td>
+            <td>
+                broofa
+                bentomas
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;broofa&#x2F;node-mime&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>79</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;hparra&#x2F;gulp-rename'>gulp-rename</a></td>
+            <td>1.2.2</td>
+            <td>
+                hparra
+                contra
+                shinnn
+                fractal
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;hparra&#x2F;gulp-rename&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>121</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;ryanmcgrath&#x2F;wrench-js#readme'>wrench</a></td>
+            <td>1.5.9</td>
+            <td>
+                ryanmcgrath
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;ryanmcgrath&#x2F;wrench-js&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>122</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;Automattic&#x2F;cli-table'>cli-table</a></td>
+            <td>0.3.1</td>
+            <td>
+                rauchg
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;Automattic&#x2F;cli-table&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>140</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;visionmedia&#x2F;node-progress'>progress</a></td>
+            <td>1.1.8</td>
+            <td>
+                tjholowaychuk
+                hallas
+                prezjordan
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;visionmedia&#x2F;node-progress&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>151</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;Gozala&#x2F;crypto#readme'>crypto</a></td>
+            <td>0.0.3</td>
+            <td>
+                gozala
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;Gozala&#x2F;crypto&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>163</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;jindw&#x2F;xmldom'>xmldom</a></td>
+            <td>0.1.22</td>
+            <td>
+                jindw
+                yaron
+                bigeasy
+                kethinov
+                jinjinyun
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;jindw&#x2F;xmldom&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>164</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;Gozala&#x2F;querystring#readme'>querystring</a></td>
+            <td>0.2.0</td>
+            <td>
+                gozala
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;Gozala&#x2F;querystring&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>174</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;harthur&#x2F;nomnom'>nomnom</a></td>
+            <td>1.8.1</td>
+            <td>
+                harth
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;harthur&#x2F;nomnom&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>187</td>
+            <td><a href='http:&#x2F;&#x2F;github.com&#x2F;mikedeboer&#x2F;node-github'>github</a></td>
+            <td>0.2.4</td>
+            <td>
+                mikedeboer
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;mikedeboer&#x2F;node-github&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>189</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;jaredhanson&#x2F;passport-local#readme'>passport-local</a></td>
+            <td>1.0.0</td>
+            <td>
+                jaredhanson
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;jaredhanson&#x2F;passport-local&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;ciaranj&#x2F;node-oauth'>oauth</a></td>
+            <td>0.9.14</td>
+            <td>
+                ciaranj
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;ciaranj&#x2F;node-oauth&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>202</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;felixge&#x2F;node-formidable'>formidable</a></td>
+            <td>1.0.17</td>
+            <td>
+                felixge
+                svnlto
+                superjoe
+                tim-smart
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;felixge&#x2F;node-formidable&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>216</td>
+            <td><a href='http:&#x2F;&#x2F;github.com&#x2F;cthackers&#x2F;adm-zip'>adm-zip</a></td>
+            <td>0.4.7</td>
+            <td>
+                cthackers
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;cthackers&#x2F;adm-zip&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>229</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;coolaj86&#x2F;node-walk'>walk</a></td>
+            <td>2.3.9</td>
+            <td>
+                coolaj86
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;coolaj86&#x2F;node-walk&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>241</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;guille&#x2F;ms.js'>ms</a></td>
+            <td>0.7.1</td>
+            <td>
+                rauchg
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;guille&#x2F;ms&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>251</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;jaredhanson&#x2F;passport-oauth#readme'>passport-oauth</a></td>
+            <td>1.0.0</td>
+            <td>
+                jaredhanson
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;jaredhanson&#x2F;passport-oauth&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>264</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;ncb000gt&#x2F;node-cron#readme'>cron</a></td>
+            <td>1.1.0</td>
+            <td>
+                ncb000gt
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;ncb000gt&#x2F;node-cron&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>285</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;mscdex&#x2F;ssh2#readme'>ssh2</a></td>
+            <td>0.5.0</td>
+            <td>
+                mscdex
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;mscdex&#x2F;ssh2&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>298</td>
+            <td><a href=''>@ryancavanaugh&#x2F;node</a></td>
+            <td></td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+              <ul>
+                  <li>Could not fetch package.json</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>303</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;dodo&#x2F;node-slug'>slug</a></td>
+            <td>0.9.1</td>
+            <td>
+                dodo
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;dodo&#x2F;node-slug&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>305</td>
+            <td><a href='http:&#x2F;&#x2F;twitter.github.com&#x2F;hogan.js&#x2F;'>hogan.js</a></td>
+            <td>3.0.2</td>
+            <td>
+                fat
+                sayrer
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;twitter&#x2F;hogan&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>327</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;evilstreak&#x2F;markdown-js#readme'>markdown</a></td>
+            <td>0.5.0</td>
+            <td>
+                ashb
+                dom
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;evilstreak&#x2F;markdown-js&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>345</td>
+            <td><a href='https:&#x2F;&#x2F;www.npmjs.com&#x2F;packages&#x2F;firebase'>firebase</a></td>
+            <td>2.4.2</td>
+            <td>
+                firebase
+            </td>
+            <td>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>354</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;mikaelbr&#x2F;gulp-notify'>gulp-notify</a></td>
+            <td>2.2.0</td>
+            <td>
+                mikaelb
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;mikaelbr&#x2F;gulp-notify&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>367</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;jaredhanson&#x2F;connect-flash#readme'>connect-flash</a></td>
+            <td>0.1.1</td>
+            <td>
+                jaredhanson
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;jaredhanson&#x2F;connect-flash&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>369</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;postwait&#x2F;node-amqp'>amqp</a></td>
+            <td>0.2.4</td>
+            <td>
+                ry
+                postwait
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;postwait&#x2F;node-amqp&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>381</td>
+            <td><a href='http:&#x2F;&#x2F;numeraljs.com'>numeral</a></td>
+            <td>1.5.3</td>
+            <td>
+                adamwdraper
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;adamwdraper&#x2F;Numeral-js&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>384</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;shockie&#x2F;node-iniparser#readme'>iniparser</a></td>
+            <td>1.0.5</td>
+            <td>
+                shockie
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;shockie&#x2F;node-iniparser&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>385</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;geraintluff&#x2F;tv4#readme'>tv4</a></td>
+            <td>1.2.7</td>
+            <td>
+                geraintluff
+                bartvds
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;geraintluff&#x2F;tv4&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>388</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;validate-io&#x2F;string-primitive'>validate.io-string-primitive</a></td>
+            <td>1.0.0</td>
+            <td>
+                kgryte
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;validate-io&#x2F;string-primitive&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>404</td>
+            <td><a href=''>@ryancavanaugh&#x2F;jquery</a></td>
+            <td></td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+              <ul>
+                  <li>Could not fetch package.json</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>419</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;caolan&#x2F;nodeunit'>nodeunit</a></td>
+            <td>0.9.1</td>
+            <td>
+                caolan
+                mreinstein
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;caolan&#x2F;nodeunit&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>421</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;felixge&#x2F;node-stack-trace'>stack-trace</a></td>
+            <td>0.0.9</td>
+            <td>
+                felixge
+                tim-smart
+                sebastianhoitz
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;felixge&#x2F;node-stack-trace&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>425</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;validate-io&#x2F;function'>validate.io-function</a></td>
+            <td>1.0.2</td>
+            <td>
+                kgryte
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;validate-io&#x2F;function&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>426</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;jaredhanson&#x2F;utils-merge#readme'>utils-merge</a></td>
+            <td>1.0.0</td>
+            <td>
+                jaredhanson
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;jaredhanson&#x2F;utils-merge&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>434</td>
+            <td><a href='http:&#x2F;&#x2F;dfilatov.github.io&#x2F;vow&#x2F;'>vow</a></td>
+            <td>0.4.12</td>
+            <td>
+                dfilatov
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;dfilatov&#x2F;vow&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>436</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;github&#x2F;fetch#readme'>whatwg-fetch</a></td>
+            <td>0.11.0</td>
+            <td>
+                mattandrews
+                mislav
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;github&#x2F;fetch&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>437</td>
+            <td><a href='http:&#x2F;&#x2F;github.com&#x2F;olado&#x2F;doT'>dot</a></td>
+            <td>1.0.3</td>
+            <td>
+                olado
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;olado&#x2F;doT&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>453</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;scarnie&#x2F;docopt.coffee'>docopt</a></td>
+            <td>0.6.2</td>
+            <td>
+                stuartcarnie
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;scarnie&#x2F;docopt&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>459</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;substack&#x2F;node-hat#readme'>hat</a></td>
+            <td>0.0.3</td>
+            <td>
+                substack
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;substack&#x2F;node-hat&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;MIT&#x2F;X11&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+                  <li>license is similar to the valid expression &quot;MIT&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>462</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;shaneGirish&#x2F;bcryptJS#readme'>bcrypt-nodejs</a></td>
+            <td>0.0.3</td>
+            <td>
+                shanegirish
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;shaneGirish&#x2F;bcryptJS&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>472</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;Raynos&#x2F;xhr'>xhr</a></td>
+            <td>2.2.0</td>
+            <td>
+                raynos
+                naugtur
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;Raynos&#x2F;xhr&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>473</td>
+            <td><a href='https:&#x2F;&#x2F;www.npmjs.com&#x2F;packages&#x2F;callsite'>callsite</a></td>
+            <td>1.0.0</td>
+            <td>
+                tjholowaychuk
+            </td>
+            <td>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>479</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;Leaflet&#x2F;Leaflet#readme'>leaflet</a></td>
+            <td>0.7.7</td>
+            <td>
+                mourner
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;Leaflet&#x2F;Leaflet&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>483</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;visionmedia&#x2F;batch'>batch</a></td>
+            <td>0.5.3</td>
+            <td>
+                tjholowaychuk
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;visionmedia&#x2F;batch&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>484</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;coolaj86&#x2F;utile-fs'>fs.extra</a></td>
+            <td>1.3.2</td>
+            <td>
+                coolaj86
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;coolaj86&#x2F;utile-fs&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>496</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;rsms&#x2F;node-imagemagick#readme'>imagemagick</a></td>
+            <td>0.1.3</td>
+            <td>
+                rsms
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;rsms&#x2F;node-imagemagick&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>498</td>
+            <td><a href='https:&#x2F;&#x2F;www.npmjs.com&#x2F;packages&#x2F;log'>log</a></td>
+            <td>1.4.0</td>
+            <td>
+                tjholowaychuk
+            </td>
+            <td>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>506</td>
+            <td><a href='http:&#x2F;&#x2F;github.com&#x2F;tautologistics&#x2F;node-htmlparser'>htmlparser</a></td>
+            <td>1.7.7</td>
+            <td>
+                tautologistics
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;tautologistics&#x2F;node-htmlparser&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>515</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;Raynos&#x2F;global'>global</a></td>
+            <td>4.3.0</td>
+            <td>
+                raynos
+                mattesch
+                jerrysievert
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;Raynos&#x2F;global&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>516</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;Raynos&#x2F;duplexer'>duplexer</a></td>
+            <td>0.1.1</td>
+            <td>
+                raynos
+                dominictarr
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;Raynos&#x2F;duplexer&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>522</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;reworkcss&#x2F;rework'>rework</a></td>
+            <td>1.0.1</td>
+            <td>
+                tjholowaychuk
+                jonathanong
+                jongleberry
+                conradz
+                necolas
+                anthonyshort
+                ianstormtaylor
+                moox
+                clintwood
+                lydell
+                slexaxton
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;reworkcss&#x2F;rework&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>523</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;node-schedule&#x2F;node-schedule#readme'>node-schedule</a></td>
+            <td>1.1.0</td>
+            <td>
+                mattpat
+                tejasmanohar
+                sgimeno
+                jonhester
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;node-schedule&#x2F;node-schedule&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>530</td>
+            <td><a href='http:&#x2F;&#x2F;slushjs.github.io'>slush</a></td>
+            <td>1.1.1</td>
+            <td>
+                joakimbeng
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;slushjs&#x2F;slush&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>533</td>
+            <td><a href='http:&#x2F;&#x2F;github.com&#x2F;newrelic&#x2F;node-newrelic'>newrelic</a></td>
+            <td>1.26.2</td>
+            <td>
+                lykkin
+                martinkuba
+                newrelic
+                tkrajcar
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;newrelic&#x2F;node-newrelic&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>535</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;webpack&#x2F;less-loader#readme'>less-loader</a></td>
+            <td>2.2.3</td>
+            <td>
+                sokra
+                jhnns
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;webpack&#x2F;less-loader&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>537</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;coolaj86&#x2F;node-browser-compat'>btoa</a></td>
+            <td>1.1.2</td>
+            <td>
+                coolaj86
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;coolaj86&#x2F;node-browser-compat&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;Apache2&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+                  <li>license is similar to the valid expression &quot;Apache-2.0&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>541</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;ogt&#x2F;valid-url#readme'>valid-url</a></td>
+            <td>1.0.9</td>
+            <td>
+                odysseas
+                sagens
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;ogt&#x2F;valid-url&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>547</td>
+            <td><a href='http:&#x2F;&#x2F;facebook.github.io&#x2F;react'>react-tap-event-plugin</a></td>
+            <td>1.0.0</td>
+            <td>
+                s0meone
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;zilverline&#x2F;react-tap-event-plugin&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>551</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;ForbesLindesay&#x2F;win-spawn#readme'>win-spawn</a></td>
+            <td>2.0.0</td>
+            <td>
+                forbeslindesay
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;ForbesLindesay&#x2F;win-spawn&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;BSD&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+                  <li>license is similar to the valid expression &quot;BSD-2-Clause&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>557</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;mscdex&#x2F;busboy#readme'>busboy</a></td>
+            <td>0.2.13</td>
+            <td>
+                mscdex
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;mscdex&#x2F;busboy&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>558</td>
+            <td><a href='https:&#x2F;&#x2F;www.npmjs.com&#x2F;packages&#x2F;eyes'>eyes</a></td>
+            <td>0.1.8</td>
+            <td>
+                cloudhead
+                indexzero
+            </td>
+            <td>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>567</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;goto100&#x2F;xpath'>xpath</a></td>
+            <td>0.0.23</td>
+            <td>
+                goto100
+                jlrishe
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;goto100&#x2F;xpath&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;Creative Commons&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>571</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;mhevery&#x2F;jasmine-node'>jasmine-node</a></td>
+            <td>1.14.5</td>
+            <td>
+                mhevery
+                tebriel
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;mhevery&#x2F;jasmine-node&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>591</td>
+            <td><a href=''>@domoinc&#x2F;base-widget</a></td>
+            <td></td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+              <ul>
+                  <li>Could not fetch package.json</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>594</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;STRML&#x2F;keyMirror'>keymirror</a></td>
+            <td>0.1.1</td>
+            <td>
+                strml
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;STRML&#x2F;keyMirror&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>599</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;baalexander&#x2F;node-portscanner'>portscanner</a></td>
+            <td>1.0.0</td>
+            <td>
+                baalexander
+                smassa
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;baalexander&#x2F;node-portscanner&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>612</td>
+            <td><a href=''>@domoinc&#x2F;da-theme2</a></td>
+            <td></td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+              <ul>
+                  <li>Could not fetch package.json</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>613</td>
+            <td><a href='http:&#x2F;&#x2F;github.com&#x2F;iriscouch&#x2F;browser-request'>browser-request</a></td>
+            <td>0.3.3</td>
+            <td>
+                jhs
+                maxogden
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;iriscouch&#x2F;browser-request&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>626</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;bpedro&#x2F;node-fs#readme'>node-fs</a></td>
+            <td>0.1.7</td>
+            <td>
+                bpedro
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;bpedro&#x2F;node-fs&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>629</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;validate-io&#x2F;boolean-primitive'>validate.io-boolean-primitive</a></td>
+            <td>1.0.0</td>
+            <td>
+                kgryte
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;validate-io&#x2F;boolean-primitive&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>630</td>
+            <td><a href='https:&#x2F;&#x2F;www.npmjs.com&#x2F;packages&#x2F;argv'>argv</a></td>
+            <td>0.0.2</td>
+            <td>
+                codenothing
+            </td>
+            <td>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>633</td>
+            <td><a href='http:&#x2F;&#x2F;rethinkdb.com'>rethinkdb</a></td>
+            <td>2.3.0</td>
+            <td>
+                rethinkdb
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;rethinkdb&#x2F;rethinkdb&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>635</td>
+            <td><a href='https:&#x2F;&#x2F;bitbucket.org&#x2F;mailchimp&#x2F;mandrill-api-node'>mandrill-api</a></td>
+            <td>1.0.45</td>
+            <td>
+                mailchimp
+            </td>
+            <td>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>643</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;substack&#x2F;dnode#readme'>dnode</a></td>
+            <td>1.2.2</td>
+            <td>
+                substack
+                seethroughtrees
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;substack&#x2F;dnode&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>651</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;lepture&#x2F;colorful#readme'>colorful</a></td>
+            <td>2.1.0</td>
+            <td>
+                lepture
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;lepture&#x2F;colorful&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>656</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;fb55&#x2F;node-entities'>entities</a></td>
+            <td>1.1.1</td>
+            <td>
+                feedic
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;fb55&#x2F;node-entities&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;BSD-like&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+                  <li>license is similar to the valid expression &quot;BSD-2-Clause&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>657</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;3rd-Eden&#x2F;useragent#readme'>useragent</a></td>
+            <td>2.1.9</td>
+            <td>
+                v1
+                3rdeden
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;3rd-Eden&#x2F;useragent&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>{&quot;type&quot;:&quot;MIT&quot;,&quot;url&quot;:&quot;https:&#x2F;&#x2F;github.com&#x2F;3rd-Eden&#x2F;useragent&#x2F;blob&#x2F;master&#x2F;LICENSE&quot;}</code>
+              <ul>
+                  <li>Invalid license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>660</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;fluent-ffmpeg&#x2F;node-fluent-ffmpeg'>fluent-ffmpeg</a></td>
+            <td>2.0.1</td>
+            <td>
+                schaermu
+                spruce
+                bencevans
+                njoyard
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;fluent-ffmpeg&#x2F;node-fluent-ffmpeg&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>662</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;ded&#x2F;domready'>domready</a></td>
+            <td>1.0.8</td>
+            <td>
+                ded
+                fat
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;ded&#x2F;domready&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>665</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;xavi-&#x2F;node-copy-paste'>copy-paste</a></td>
+            <td>1.1.4</td>
+            <td>
+                xavi
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;xavi-&#x2F;node-copy-paste&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>671</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;digitalbazaar&#x2F;forge'>node-forge</a></td>
+            <td>0.6.39</td>
+            <td>
+                davidlehn
+                dlongley
+                msporny
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;digitalbazaar&#x2F;forge&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>678</td>
+            <td><a href='http:&#x2F;&#x2F;preludels.com'>prelude-ls</a></td>
+            <td>1.1.2</td>
+            <td>
+                gkz
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;gkz&#x2F;prelude-ls&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>689</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;bevry&#x2F;watchr'>watchr</a></td>
+            <td>2.4.13</td>
+            <td>
+                balupton
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;bevry&#x2F;watchr&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>{&quot;type&quot;:&quot;MIT&quot;}</code>
+              <ul>
+                  <li>Invalid license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>691</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;mscdex&#x2F;node-ftp'>ftp</a></td>
+            <td>0.3.10</td>
+            <td>
+                mscdex
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;mscdex&#x2F;node-ftp&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>718</td>
+            <td><a href='https:&#x2F;&#x2F;www.npmjs.com&#x2F;packages&#x2F;uid2'>uid2</a></td>
+            <td>0.0.3</td>
+            <td>
+                coreh
+            </td>
+            <td>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>721</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;jaredhanson&#x2F;passport-http-bearer#readme'>passport-http-bearer</a></td>
+            <td>1.0.1</td>
+            <td>
+                jaredhanson
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;jaredhanson&#x2F;passport-http-bearer&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>728</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;davidchambers&#x2F;string-format'>string-format</a></td>
+            <td>0.5.0</td>
+            <td>
+                davidchambers
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;davidchambers&#x2F;string-format&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>732</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;webpack&#x2F;raw-loader'>raw-loader</a></td>
+            <td>0.5.1</td>
+            <td>
+                sokra
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;webpack&#x2F;raw-loader&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>736</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;substack&#x2F;node-charm'>charm</a></td>
+            <td>1.0.0</td>
+            <td>
+                substack
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;substack&#x2F;node-charm&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;MIT&#x2F;X11&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+                  <li>license is similar to the valid expression &quot;MIT&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>741</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;jaredhanson&#x2F;passport-http'>passport-http</a></td>
+            <td>0.3.0</td>
+            <td>
+                jaredhanson
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;jaredhanson&#x2F;passport-http&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>758</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;nisaacson&#x2F;required-keys#readme'>required-keys</a></td>
+            <td>1.0.5</td>
+            <td>
+                clewfirst
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;nisaacson&#x2F;required-keys&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;BSD&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+                  <li>license is similar to the valid expression &quot;BSD-2-Clause&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>775</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;cowboy&#x2F;node-globule'>globule</a></td>
+            <td>0.2.0</td>
+            <td>
+                cowboy
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;cowboy&#x2F;node-globule&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>779</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;Raynos&#x2F;observ'>observ</a></td>
+            <td>0.2.0</td>
+            <td>
+                raynos
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;Raynos&#x2F;observ&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>784</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;patrick-steele-idem&#x2F;child-process-promise#readme'>child-process-promise</a></td>
+            <td>2.0.1</td>
+            <td>
+                psteeleidem
+                pnidem
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;patrick-steele-idem&#x2F;child-process-promise&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;BSD&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+                  <li>license is similar to the valid expression &quot;BSD-2-Clause&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>787</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;validate-io&#x2F;number-primitive'>validate.io-number-primitive</a></td>
+            <td>1.0.0</td>
+            <td>
+                kgryte
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;validate-io&#x2F;number-primitive&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>795</td>
+            <td><a href='http:&#x2F;&#x2F;github.com&#x2F;vesln&#x2F;temporary'>temporary</a></td>
+            <td>0.0.8</td>
+            <td>
+                vesln
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;vesln&#x2F;temporary&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>801</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;validate-io&#x2F;nonnegative-integer'>validate.io-nonnegative-integer</a></td>
+            <td>1.0.0</td>
+            <td>
+                kgryte
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;validate-io&#x2F;nonnegative-integer&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>813</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;desmondmorris&#x2F;node-twitter'>twitter</a></td>
+            <td>1.2.5</td>
+            <td>
+                desmondmorris
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;desmondmorris&#x2F;node-twitter&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>815</td>
+            <td><a href=''>@polymer&#x2F;polymer</a></td>
+            <td></td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+              <ul>
+                  <li>Could not fetch package.json</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>819</td>
+            <td><a href='http:&#x2F;&#x2F;jqueryui.com'>jquery-ui</a></td>
+            <td>1.10.5</td>
+            <td>
+                devongovett
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;jquery&#x2F;jquery-ui&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>825</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;pkrumins&#x2F;node-lazy#readme'>lazy</a></td>
+            <td>1.0.11</td>
+            <td>
+                pkrumins
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;pkrumins&#x2F;node-lazy&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>{&quot;type&quot;:&quot;MIT&quot;}</code>
+              <ul>
+                  <li>Invalid license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>835</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;Raynos&#x2F;after#readme'>after</a></td>
+            <td>0.8.1</td>
+            <td>
+                raynos
+                shtylman
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;Raynos&#x2F;after&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>837</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;leukhin&#x2F;co-request#readme'>co-request</a></td>
+            <td>1.0.0</td>
+            <td>
+                leukhin
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;leukhin&#x2F;co-request&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>838</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;indexzero&#x2F;daemon.node#readme'>daemon</a></td>
+            <td>1.1.0</td>
+            <td>
+                indexzero
+                avianflu
+                shtylman
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;indexzero&#x2F;daemon&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>851</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;bitcoinjs&#x2F;bitcoinjs-lib#readme'>bitcoinjs-lib</a></td>
+            <td>2.2.0</td>
+            <td>
+                bitcoinjs
+                justmoon
+                kyledrake
+                dcousens
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;bitcoinjs&#x2F;bitcoinjs-lib&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>853</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;mridgway&#x2F;hoist-non-react-statics#readme'>hoist-non-react-statics</a></td>
+            <td>1.0.5</td>
+            <td>
+                mridgway
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;mridgway&#x2F;hoist-non-react-statics&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>858</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;justmoon&#x2F;node-bignum#readme'>bignum</a></td>
+            <td>0.11.0</td>
+            <td>
+                bitcoinjs
+                justmoon
+                rvagg
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;justmoon&#x2F;node-bignum&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;MIT&#x2F;X11&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+                  <li>license is similar to the valid expression &quot;MIT&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>861</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;component&#x2F;emitter'>emitter-component</a></td>
+            <td>1.1.1</td>
+            <td>
+                tjholowaychuk
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;component&#x2F;emitter&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>862</td>
+            <td><a href='https:&#x2F;&#x2F;www.npmjs.com&#x2F;packages&#x2F;dirty'>dirty</a></td>
+            <td>1.0.0</td>
+            <td>
+                felixge
+                bentaber
+                distracteddev
+                younggi
+            </td>
+            <td>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>864</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;othiym23&#x2F;node-continuation-local-storage#readme'>continuation-local-storage</a></td>
+            <td>3.1.6</td>
+            <td>
+                othiym23
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;othiym23&#x2F;node-continuation-local-storage&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;BSD&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+                  <li>license is similar to the valid expression &quot;BSD-2-Clause&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>871</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;tvcutsem&#x2F;harmony-reflect'>harmony-reflect</a></td>
+            <td>1.4.5</td>
+            <td>
+                tvcutsem
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;tvcutsem&#x2F;harmony-reflect&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>875</td>
+            <td><a href='http:&#x2F;&#x2F;github.com&#x2F;wearefractal&#x2F;gulp-cached'>gulp-cached</a></td>
+            <td>1.1.0</td>
+            <td>
+                fractal
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;wearefractal&#x2F;gulp-cached&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>880</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;indexzero&#x2F;winston-loggly#readme'>winston-loggly</a></td>
+            <td>1.3.1</td>
+            <td>
+                indexzero
+                chjj
+                jcrugzz
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;indexzero&#x2F;winston-loggly&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>891</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;babel&#x2F;babel&#x2F;tree&#x2F;master&#x2F;packages&#x2F;babel-plugin-transform-regenerator'>babel-plugin-transform-regenerator</a></td>
+            <td>6.6.5</td>
+            <td>
+                amasad
+                hzoo
+                jmm
+                loganfsmyth
+                sebmck
+                thejameskyle
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;babel&#x2F;babel&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;BSD&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+                  <li>license is similar to the valid expression &quot;BSD-2-Clause&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>898</td>
+            <td><a href='http:&#x2F;&#x2F;github.com&#x2F;faisalman&#x2F;ua-parser-js'>ua-parser-js</a></td>
+            <td>0.7.10</td>
+            <td>
+                faisalman
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;faisalman&#x2F;ua-parser-js&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>899</td>
+            <td><a href='https:&#x2F;&#x2F;www.npmjs.com&#x2F;packages&#x2F;trim'>trim</a></td>
+            <td>0.0.1</td>
+            <td>
+                tjholowaychuk
+            </td>
+            <td>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>900</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;Filirom1&#x2F;findup'>findup</a></td>
+            <td>0.1.5</td>
+            <td>
+                Filirom1
+                filirom1
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;Filirom1&#x2F;findup&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>905</td>
+            <td><a href='http:&#x2F;&#x2F;pksunkara.github.com&#x2F;inflect'>i</a></td>
+            <td>0.3.4</td>
+            <td>
+                pksunkara
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;pksunkara&#x2F;inflect&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>906</td>
+            <td><a href='http:&#x2F;&#x2F;github.com&#x2F;jiangmiao&#x2F;node-getopt'>node-getopt</a></td>
+            <td>0.2.3</td>
+            <td>
+                jiangmiao
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;jiangmiao&#x2F;node-getopt&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>915</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;marionettejs&#x2F;backbone.marionette'>backbone.marionette</a></td>
+            <td>2.4.5</td>
+            <td>
+                elliotf
+                derickbailey
+                samccone
+                ahumphreys87
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;marionettejs&#x2F;backbone&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>926</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;daraosn&#x2F;node-zip'>node-zip</a></td>
+            <td>1.1.1</td>
+            <td>
+                daraosn
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;daraosn&#x2F;node-zip&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>928</td>
+            <td><a href=''>@linclark&#x2F;pkg</a></td>
+            <td></td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+              <ul>
+                  <li>Could not fetch package.json</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>932</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;facebook&#x2F;esprima&#x2F;tree&#x2F;fb-harmony'>esprima-fb</a></td>
+            <td>15001.1001.0-dev-harmony-fb</td>
+            <td>
+                jeffmo
+                zpao
+                gabelevi
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;facebook&#x2F;esprima&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>938</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;validate-io&#x2F;nan'>validate.io-nan</a></td>
+            <td>1.0.3</td>
+            <td>
+                kgryte
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;validate-io&#x2F;nan&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>947</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;racker&#x2F;node-elementtree'>elementtree</a></td>
+            <td>0.1.6</td>
+            <td>
+                rphillips
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;racker&#x2F;node-elementtree&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>952</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;deoxxa&#x2F;dotty#readme'>dotty</a></td>
+            <td>0.0.2</td>
+            <td>
+                deoxxa
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;deoxxa&#x2F;dotty&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;BSD&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+                  <li>license is similar to the valid expression &quot;BSD-2-Clause&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>953</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;getsentry&#x2F;raven-node#readme'>raven</a></td>
+            <td>0.10.0</td>
+            <td>
+                benvinegar
+                mattrobenolt
+                zeeg
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;getsentry&#x2F;raven-node&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;BSD&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+                  <li>license is similar to the valid expression &quot;BSD-2-Clause&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>959</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;auth0&#x2F;express-jwt#readme'>express-jwt</a></td>
+            <td>3.3.0</td>
+            <td>
+                woloski
+                jfromaniello
+                pose
+                dschenkelman
+                jaredhanson
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;auth0&#x2F;express-jwt&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>962</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;kriszyp&#x2F;json-schema#readme'>json-schema</a></td>
+            <td>0.2.2</td>
+            <td>
+                kriszyp
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;kriszyp&#x2F;json-schema&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>963</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;maleck13&#x2F;readline'>readline</a></td>
+            <td>1.3.0</td>
+            <td>
+                craigbrookes
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;maleck13&#x2F;readline&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;BSD&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+                  <li>license is similar to the valid expression &quot;BSD-2-Clause&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>965</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;scarney81&#x2F;pg-hstore'>pg-hstore</a></td>
+            <td>2.3.2</td>
+            <td>
+                scarney
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;scarney81&#x2F;pg-hstore&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>978</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;substack&#x2F;node-ap#readme'>ap</a></td>
+            <td>0.2.0</td>
+            <td>
+                substack
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;substack&#x2F;node-ap&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <code>&quot;MIT&#x2F;X11&quot;</code>
+              <ul>
+                  <li>license should be a valid SPDX license expression (without &quot;LicenseRef&quot;), &quot;UNLICENSED&quot;, or &quot;SEE LICENSE IN &lt;filename&gt;&quot;</li>
+                  <li>license is similar to the valid expression &quot;MIT&quot;</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>982</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;baalexander&#x2F;node-xmlrpc'>xmlrpc</a></td>
+            <td>1.3.1</td>
+            <td>
+                baalexander
+                plodder
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;baalexander&#x2F;node-xmlrpc&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>984</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;aaronblohowiak&#x2F;routes.js'>routes</a></td>
+            <td>2.1.0</td>
+            <td>
+                aaronblohowiak
+                raynos
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;aaronblohowiak&#x2F;routes&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>990</td>
+            <td><a href='https:&#x2F;&#x2F;github.com&#x2F;webpack&#x2F;html-loader#readme'>html-loader</a></td>
+            <td>0.4.3</td>
+            <td>
+                peerigon
+                sokra
+            </td>
+            <td>
+                <a href='https:&#x2F;&#x2F;github.com&#x2F;webpack&#x2F;html-loader&#x2F;edit&#x2F;master&#x2F;package.json'>
+                    <span class='glyphicon glyphicon-pencil'></span>
+                </a>
+            </td>
+            <td>
+              <ul>
+                  <li>Missing license property</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <a href="https://github.com/npm1k/npm1k.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+  </body>
+</html>
