@@ -18,15 +18,13 @@
         <h1>npm1K <small>are we licensed yet?</small></h1>
       </div>
 
-      <p><a href="http://npmjs.com">npm, the awesome source code package manager for JavaScript and stuff</a>, recently <a href="https://github.com/npm/npm/releases/tag/v2.10.0">updated its guidelines on license metadata in <code>package.json</code> files</a>. The new guidelines ask maintainers to use <a href="http://spdx.org">the SPDX standard’s</a> license expression syntax to show how their work is licensed in a machine-readable way. You will get a warning if you don’t.</p>
+      <p><a href="http://npmjs.com">npm, the awesome source code package manager for JavaScript and stuff</a>, publishes a <a href="https://docs.npmjs.com/files/package.json#license">specification for license metadata in <code>package.json</code> files</a>. The spec asks maintainers to use <a href="http://spdx.org">the SPDX standard’s</a> license expression syntax to show how their work is licensed in a machine-readable way. You will get a warning if you don’t.</p>
 
       <p>In most cases, that's as easy as setting your <code>license</code> property (<em>not</em> <code>licenses</code>, as for RubyGems) to <code>MIT</code>, <code>ISC</code>, <code>BSD-2-Clause</code>, <code>Apache-2.0</code>, or some other string on <a href="http://spdx.org/licenses">SPDX' official list</a>. You can even <code>Unlicense</code> or <code>WTFPL</code>, you rebel, you.</p>
 
-      <p>Who cares? Nobody cares! Until they have to do a license check. Then, thanks to how amazing npm is, you’re left staring down a bottomless well of <code>node_modules</code> directories you must search, manually, for <code>LICENSE</code> files and hints in <code>README</code>.  But shouldn’t some lousy program do that kind of work for you? Of course! And it would sure help if the npm ecosystem offered good, clean metadata to chew on.</p>
-
       <p>The following is a list of packages among the 1,000 most-depended-upon (the “npm1K”) that aren't yet part of that better world. There are handy links for making quick pull requests to fix <code>package.json</code> if you’d like to help them out. Given how vital these packages are, each one with a good <code>license</code> property helps make Node easier to adopt in new and different teams, many of which are dipping timid corporate toes into open-source for the very first time.</p>
 
-      <p>Want to rage-tweet about the new npm validation warning? Blame it on <a href="https://github.com/kemitchell">@kemitchell</a>. Want to trash npm for this corny single-page website? Can’t. It’s not affiliated with npm.</p>
+      <p>Who cares? Nobody cares! Until they have to do a license check. Then, thanks to how amazing npm is, you’re left staring down a bottomless well of <code>node_modules</code> directories you must search, manually, for <code>LICENSE</code> files and hints in <code>README</code>.  But shouldn’t some lousy program do that kind of work for you? Of course! And it would sure help if the npm ecosystem offered good, clean metadata to chew on.</p>
 
       <p>Special thanks to <a href="https://github.com/beaugunderson">@beaugunderson</a> and <a href="https://github.com/tunnckoCore">@tunnckoCore</a>.</p>
 
