@@ -48,16 +48,9 @@ function processPackages (packages, callback) {
     packages,
     function (name, next) {
       var packageNumber = ++number
-      packageJSON(name, 'latest', function (error, json) {
-        var result = { number: packageNumber, package: name }
-        if (error) {
-          result.error = 'Could not fetch package.json'
-          result.licenseData = {
-            validForNewPackages: false,
-            warnings: [ 'Could not fetch package.json' ]
-          }
-          next(null, result)
-        } else {
+      var result = { number: packageNumber, package: name }
+      packageJSON(name, 'latest')
+        .then(function (json) {
           normalize(json)
           result.number = packageNumber
           result.package = name
@@ -86,8 +79,15 @@ function processPackages (packages, callback) {
             result.fixItURL = getFixItURL(json.repository)
           }
           next(null, result)
-        }
-      })
+        })
+        .catch(function () {
+          result.error = 'Could not fetch package.json'
+          result.licenseData = {
+            validForNewPackages: false,
+            warnings: [ 'Could not fetch package.json' ]
+          }
+          next(null, result)
+        })
     },
     callback
   )
