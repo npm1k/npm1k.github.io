@@ -97,10 +97,11 @@ function getFixItURL (repository) {
   var repoURL = repository.url
   if (repoURL && repoURL.indexOf('github.com') > -1) {
     var parsed = parseGitHub(
-      repoURL.replace('git+https://', 'https://'))
+      repoURL.replace('git+https://', 'https://')
+    )
     if (parsed) {
       return (
-        'https://github.com' + '/' + parsed.user + '/' + parsed.repo +
+        'https://github.com' + '/' + parsed.repository +
         '/edit' + '/master' + '/package.json'
       )
     }
