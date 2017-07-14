@@ -49,13 +49,16 @@ function processPackages (packages, callback) {
     packages,
     function (name, next) {
       var packageNumber = ++number
-      var result = { number: packageNumber, package: name }
+      var result = {
+        number: packageNumber,
+        package: name
+      }
       getPackageJSON(name, function (error, json) {
         if (error) {
           result.error = 'Could not fetch package.json'
           result.licenseData = {
             validForNewPackages: false,
-            warnings: [ 'Could not fetch package.json' ]
+            warnings: ['Could not fetch package.json']
           }
           return next(null, result)
         }
@@ -73,13 +76,13 @@ function processPackages (packages, callback) {
           } else {
             result.licenseData = {
               validForNewPackages: false,
-              warnings: [ 'Invalid license property' ]
+              warnings: ['Invalid license property']
             }
           }
         } else {
           result.licenseData = {
             validForNewPackages: false,
-            warnings: [ 'Missing license property' ]
+            warnings: ['Missing license property']
           }
         }
         result.license = JSON.stringify(json.license)
