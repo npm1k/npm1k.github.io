@@ -1,9 +1,10 @@
 var async = require('async')
+var parse = require('json-parse-errback')
 var fs = require('fs')
+var http = require('http')
 var mustache = require('mustache')
 var normalize = require('normalize-package-data')
 var npm1k = require('npm1k')
-var packageJSON = require('package-json')
 var parseGitHub = require('parse-github-url')
 var path = require('path')
 var validateLicense = require('validate-npm-package-license')
@@ -49,45 +50,44 @@ function processPackages (packages, callback) {
     function (name, next) {
       var packageNumber = ++number
       var result = { number: packageNumber, package: name }
-      packageJSON(name, 'latest')
-        .then(function (json) {
-          normalize(json)
-          result.number = packageNumber
-          result.package = name
-          result.version = json.version
-          result.maintainers = json.maintainers
-          result.homepage = json.homepage
-            ? encodeURI(json.homepage)
-            : 'https://www.npmjs.com/packages/' + name
-          if (json.license) {
-            if (typeof json.license === 'string') {
-              result.licenseData = validateLicense(json.license)
-            } else {
-              result.licenseData = {
-                validForNewPackages: false,
-                warnings: [ 'Invalid license property' ]
-              }
-            }
-          } else {
-            result.licenseData = {
-              validForNewPackages: false,
-              warnings: [ 'Missing license property' ]
-            }
-          }
-          result.license = JSON.stringify(json.license)
-          if (json.repository) {
-            result.fixItURL = getFixItURL(json.repository)
-          }
-          next(null, result)
-        })
-        .catch(function () {
+      getPackageJSON(name, function (error, json) {
+        if (error) {
           result.error = 'Could not fetch package.json'
           result.licenseData = {
             validForNewPackages: false,
             warnings: [ 'Could not fetch package.json' ]
           }
-          next(null, result)
-        })
+          return next(null, result)
+        }
+        normalize(json)
+        result.number = packageNumber
+        result.package = name
+        result.version = json.version
+        result.maintainers = json.maintainers
+        result.homepage = json.homepage
+          ? encodeURI(json.homepage)
+          : 'https://www.npmjs.com/packages/' + name
+        if (json.license) {
+          if (typeof json.license === 'string') {
+            result.licenseData = validateLicense(json.license)
+          } else {
+            result.licenseData = {
+              validForNewPackages: false,
+              warnings: [ 'Invalid license property' ]
+            }
+          }
+        } else {
+          result.licenseData = {
+            validForNewPackages: false,
+            warnings: [ 'Missing license property' ]
+          }
+        }
+        result.license = JSON.stringify(json.license)
+        if (json.repository) {
+          result.fixItURL = getFixItURL(json.repository)
+        }
+        next(null, result)
+      })
     },
     callback
   )
@@ -106,4 +106,33 @@ function getFixItURL (repository) {
       )
     }
   }
+}
+
+function getPackageJSON (name, callback) {
+  var path = '/' + encodeURIComponent(name) + '/latest'
+  http.get({
+    host: 'registry.npmjs.com',
+    path: path,
+    headers: {
+      'Accept': 'application/json; charset=UTF-8'
+    }
+  }, function (response) {
+    if (response.statusCode !== 200) {
+      callback(new Error(
+        'Server responded ' + response.statusCode + ' for ' + path
+      ))
+    } else {
+      var buffer = []
+      response
+        .on('data', function (chunk) {
+          buffer.push(chunk)
+        })
+        .once('error', function (error) {
+          callback(error)
+        })
+        .once('end', function () {
+          parse(Buffer.concat(buffer), callback)
+        })
+    }
+  })
 }
